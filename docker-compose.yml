@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  mongodb:
+    image: mongo:3.4.3
+    hostname: reservations-mongo-db
+    ports:
+    - 27017:27017
+    volumes:
+    - /data/db
+    container_name: skills-mongo-db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: localadmin
+    command: --auth
